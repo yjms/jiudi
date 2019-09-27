@@ -1,0 +1,102 @@
+<view class="whole">
+    <scroll-view scroll-y="{{true}}" class="liftBox">
+        <view class="jdnum">已酿造 {{wineCount}} 滴</view>
+        <view a:for="{{shopList}}" class="shoplist">
+            <view >
+                <image mode="widthFix" src="{{item.prizePicture}}" class="bottle"/>
+                <text class="priName" a:if="{{item.prizeType!=1}}">{{item.prizeName}}</text>
+                <text class="priName" a:if="{{item.prizeType==1}}">{{item.prizeName.substr(1)}}</text>
+                <image mode="widthFix" src="{{baseUrl}}/end_26.png" class="exchange" onTap="exchange"  data-type="{{item.prizeType}}" data-wid="{{item.id}}" data-xhnum="{{item.prizeWine}}" data-name="{{item.prizeName}}" data-forId="{{item.fundUrl}}" data-couponMoney="{{item.couponMoney}}" data-other="{{item.prizeCopywriting}}"/>
+                <text class="restNum" >剩余{{item.prizeCount}}{{item.prizeCompany}}</text>
+                <text class="restNum restNum2" >价值{{item.prizeWine}}滴酒</text>
+                <!-- <text class="restNum" a:if="{{item.prizeType!=3}}">剩余{{item.prizeCount}}张</text> -->
+            </view> 
+        </view>
+    </scroll-view>
+    <image mode="widthFix" src="{{baseUrl}}/exchange.png" class="exchangeBtn" onTap="myExchange"/>
+    <!-- 留资弹窗 hidden="{{levShow}}"-->
+    <view class="levInfo " hidden="{{levShow}}">
+        <view class="nameInfo {{changePage?'toTop':''}}">
+            <view class="rowInfo">
+                <view class="preView">
+                    <text>姓 名:</text>
+                    <view>
+                        <input  placeholder="姓名" onInput="getValue" data-type="name"/>
+                    </view>
+                </view>
+                <view class="preView">
+                    <text>电 话:</text>
+                    <view>
+                      <input  placeholder="电话" onInput="getValue" data-type="phone"/>
+                    </view>
+                </view>
+                <!-- <view class="preView">
+                    <text>邮 编:</text>
+                    <view>
+                      <input  placeholder="邮编" onInput="getValue" data-type="mail" />
+                    </view>
+                </view> -->
+                <view class="preView addstyle">
+                    <text>地 址:</text>
+                    <view>
+                      <input placeholder="地址"  onInput="getValue" data-type="address"/>
+                    </view>
+                </view>
+            </view>
+            <!-- <input placeholder="姓名" class="useName" onInput="getValue" data-type="name"/>
+            <input placeholder="电话" class="usePhone" onInput="getValue" data-type="phone"/>
+            <input placeholder="邮编" class="e-mail" onInput="getValue" data-type="mail"/>
+            <textarea placeholder="地址" class="address" maxlength="-1" onInput="getValue" data-type="address"></textarea> -->
+            <view class="subBtn" onTap="sublev"></view> 
+            <view class="closeBtn" onTap="closePop"></view>
+        </view>
+    </view>
+    <!-- 财运金弹窗 -->
+    <view class="fortunePop" hidden="{{towPop}}">
+        <view class="cyBox">
+            <view class="towPop" onTap="closePop"></view>
+            <view><text> 恭喜您!</text></view>
+            <view><text>{{couponMoney}}元财运金兑换成功</text></view>
+            <view><text>财运金已经发到您的个人账户</text></view>
+            <view><text>请在{{fortuneTime[0]}}年{{fortuneTime[1]}}月{{fortuneTime[2]}}日之前使用</text></view>
+            <view class="goUse" onTap="goUse"></view>
+        </view>
+    </view>
+    <!-- 消耗酒滴弹窗 -->
+    <view class="mouthPop" hidden="{{xhJD}}">
+        <view class="xhjiudi">
+            <view>您将消耗{{xhnum}}滴酒</view>
+            <view>兑换{{prizeName}}</view>
+            <view class="closeJD"  onTap="closePop"></view>
+            <view class="comfigJD" onTap="comfigJD"></view>
+            <view class="cancleJD" onTap="closePop"></view>
+        </view>
+    </view>
+    <!-- 卡券弹窗 -->
+    <view class="mouthPop" hidden="{{youku}}">
+        <view class="cardBox" style="background-image:url({{baseUrl}}/cardPop.png)">
+            <view>您的优酷会员月卡兑换码为：</view>
+            <view onLongTap="copeCode" data-redeemCode="{{redeemCode}}">{{redeemCode}}</view>
+            <view>请保存好以后至优酷会员个人页</view>
+            <view>面进行兑换。</view>
+            <view>请在{{endDate[0]}}年{{endDate[1]}}月{{endDate[2]}}日前使用</view>
+            <view class="okBtn" onTap="closePop"></view>
+            <view class="closebtn" onTap="closePop"></view>
+        </view>
+    </view>
+    <!-- 其他奖品弹窗 -->
+    <view class="mouthPop" hidden="{{otherWorld}}">
+        <view class="cardBox cardBox2" style="background-image:url({{baseUrl}}/cardPop.png)">
+            <view>{{otherText}}</view>
+            <view class="okBtn" onTap="closePop"></view>
+            <view class="closebtn" onTap="closePop"></view>
+        </view>
+    </view>
+    <!-- 酒滴数不够时的弹窗 -->
+   <view class="mouthPop" hidden="{{jdbugou}}">
+        <view class="cardBox setflex" style="background-image:url({{baseUrl}}/qiandao.png)">
+           <image mode="widthFix" src="{{baseUrl}}/bugou.png" class="bugou"/>
+           <view class="closebtn" onTap="closePop"></view>
+        </view>
+   </view> 
+</view>

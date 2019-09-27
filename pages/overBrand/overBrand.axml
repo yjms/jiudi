@@ -1,0 +1,9 @@
+<view class="whole">
+    <view class="centerBox">
+        <view class="{{rotateNum-1==index?'isSelect':''}} {{num>=6?'hide':''}}" animation="{{num==index?animationInfo:''}}" a:for="{{arr}}"></view>
+        <image mode="widthFix" src="{{baseUrl}}/game_1.png" class="overBrand {{num>=6?'hide':''}}" onTap="luckDraw"/>
+        <image mode="widthFix" src="{{baseUrl}}/game_2.png" class="bigBrand {{num<6?'hide':''}}"/>
+        <image mode="widthFix" src="{{baseUrl}}/{{jdImg[getjdNnm-1]}}" class="jdTxt {{num<6?'hide':''}}"/>
+        <image mode="widthFix" src="{{baseUrl}}/game2_1.png" class="backHome {{num<6?'hide':''}}" onTap="backHome"/> 
+    </view>
+</view>

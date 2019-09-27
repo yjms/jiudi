@@ -1,0 +1,80 @@
+const http = require('../../unit/http.js');
+Page({
+  data: {
+      baseUrl:'https://game.flyh5.cn/resources/game/wechat/yls/putDrop',
+      levShow:true,
+      towPop:true,
+      shopList:'',
+      youku:true
+  },
+  onLoad() {
+    this.getshopList();
+  },
+  myExchange(){
+      my.navigateTo({
+          url:"/pages/myChange/myChange"
+      });
+  },
+  exchange(e){
+      let type = e.currentTarget.dataset.type;
+      let prizeId = e.currentTarget.dataset.wid;
+      let dat ={
+        userId: my.getStorageSync({ key: 'useId' }).data,
+        prizeId:prizeId
+      }
+      http.Post('signIn/exchangePrize',dat,'post').then((res)=>{
+        //  console.log(res);
+        if(res.data.code == '0000'){
+            if(type==3){
+                this.setData({
+                    levShow:false
+                  })
+            }else if(type==2){
+                  this.setData({
+                      youku:false
+                  })
+            }else if(type==1){
+                  this.setData({
+                      towPop:false
+                  })
+            }
+        }
+      })
+     
+     
+  },
+  sublev(){
+      console.log('提交资料')
+  },
+  closePop(){
+      this.setData({
+          levShow:true,
+          towPop:true,
+          youku:true
+      })
+  },
+  goUse(){
+      console.log('去使用')
+  },
+  copeCode(){
+     my.setClipboard({
+      text: "75FKJ56DH2W526", // 剪贴板数据
+      success: (res) => {
+      my.showToast({
+            type: 'none',
+            content: '复制成功',
+            duration: 3000,
+            success: () => {
+            },
+            });
+      },
+    })
+  },
+  getshopList(){
+      http.Post2('wineApi/signIn/selectAllPrize',{},'post').then((res)=>{
+        if(res.data.code=="0000")
+        this.setData({shopList:res.data.result});
+        console.log(res.data.result,this.data.shopList);
+      })
+  }
+});

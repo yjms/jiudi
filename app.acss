@@ -1,0 +1,7 @@
+@font-face{
+    font-family: 'font1';
+    src: url("https://game.flyh5.cn/resources/game/wechat/yls/jiudi/font/SOURCEHANSANSCN-BOLD.OTF");
+}
+page {
+  background: #f7f7f7;
+}

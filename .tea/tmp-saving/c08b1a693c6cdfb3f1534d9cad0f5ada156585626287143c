@@ -1,0 +1,53 @@
+const http = require()
+Page({
+  data: {
+      baseUrl:'https://game.flyh5.cn/resources/game/wechat/yls/putDrop',
+      levShow:false,
+      towPop:false,
+  },
+  onLoad() {
+    this.getshopList();
+  },
+  myExchange(){
+      my.navigateTo({
+          url:"/pages/myChange/myChange"
+      });
+  },
+  exchange(){
+      console.log('兑换')
+      this.setData({
+          levShow:true
+      })
+  },
+  sublev(){
+      console.log('提交资料')
+  },
+  closePop(){
+      this.setData({
+          levShow:false,
+          towPop:false
+      })
+  },
+  goUse(){
+      console.log('去使用')
+  },
+  copeCode(){
+     my.setClipboard({
+      text: "75FKJ56DH2W526", // 剪贴板数据
+      success: (res) => {
+      my.showToast({
+            type: 'none',
+            content: '复制成功',
+            duration: 3000,
+            success: () => {
+            },
+            });
+      },
+    })
+  },
+  getshopList(){
+      http.Post('prize/selectAllPrize',{},'post').then((res)=>{
+        console.log(res)
+      })
+  }
+});

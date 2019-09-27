@@ -1,0 +1,104 @@
+.whole{
+    width: 100vw;
+    height: 100vh;
+    background: url("https://game.flyh5.cn/resources/game/wechat/yls/putDrop/game_8.jpg") no-repeat center;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.centerBox{
+    width:652rpx;
+    height: 1005rpx;
+    /* background-color: azure; */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap:wrap; 
+    position: relative;
+}
+.centerBox view{
+    width: 194rpx;
+    height: 381rpx;
+    /* background-color: blanchedalmond; */
+    background: url("https://game.flyh5.cn/resources/game/wechat/yls/putDrop/game_2.png") no-repeat center;
+    background-size: cover;
+}
+.overBrand{
+    width: 314rpx;
+    height: auto;
+    margin: 0 auto;
+    margin-top:80rpx;     
+}
+.isSelect{
+  position: absolute;
+  left:50%;
+  top:50%;
+  z-index: 99;
+  transform: translate(-50%,-50%) scale(2.5,2.5) !important; 
+  /* animation: selectd 2s linear; */
+  /* animation-delay:2s; */
+}
+.zhezhao{
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 9999999
+}
+.zhezhao text{
+  font-size: 55rpx;
+  color: white;
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+}
+.hide{
+    display: none;
+}
+.backHome{
+    width: 314rpx;
+    height: auto;
+    position: absolute;
+    bottom: 8rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
+}
+.bigBrand{
+    width: 452rpx;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-52%);
+    animation: selectd 1s linear;
+    /* animation-delay:2s; */
+}
+.jdTxt{
+    width: 258rpx;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 100;
+    transform: translate(-50%,-50%);
+    animation: 1.5s animat linear;
+}
+@keyframes selectd{
+  0%{
+    transform:translate(-50%,-52%) scale(0.6,0.6) rotateY(0deg);  
+  }
+  100%{
+    transform:translate(-50%,-52%) scale(1,1) rotateY(360deg);
+  }
+ } 
+ @keyframes animat{
+     0%{
+         opacity: 0;
+     }
+     98%{
+         opacity: 0;
+     }
+     100%{
+         opacity: 1;
+     }
+ }

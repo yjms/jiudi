@@ -1,0 +1,15 @@
+<view onTap="handleTap" class="whole">
+  <!-- <text class="setFont">哈哈哈</text> -->
+  <view class="card {{rotateNum-1==index?'isSelect':''}}" animation="{{num==index?animationInfo:''}}" a:for="{{arr}}" style="transform: rotateY({{rotateNum-1==index?rotate:180+'deg'}})">
+    <image a:if="{{rotateNum-1==index}}" mode="widthFix" src="https://game.flyh5.cn/resources/game/admin_yyt/2019/dfqc/15631528335d2bd1c16eced.jpg"/>
+  </view>
+  <!-- <view class="card" animation="{{animationInfo}}">2</view>
+  <view class="card">3</view>
+  <view class="card">4</view>
+  <view class="card">5</view>
+  <view class="card">6</view> -->
+</view>
+<view class="zhezhao" a:if="{{isShow}}">
+  <text onTap="closeDraw">x</text>
+</view>
+<button size="default" type="primary" class="luckDraw" onTap="luckDraw">抽奖</button>

@@ -1,0 +1,363 @@
+
+/* @font-face{
+    font-family: 'font2';
+    src: url("https://game.flyh5.cn/resources/game/wechat/yls/jiudi/font/SOURCEHANSANSCN-EXTRALIGHT.OTF");
+}
+@font-face{
+    font-family: 'font3';
+    src: url("https://game.flyh5.cn/resources/game/wechat/yls/jiudi/font/SOURCEHANSANSCN-HEAVY.OTF");
+}
+@font-face{
+    font-family: 'font4';
+    src: url("https://game.flyh5.cn/resources/game/wechat/yls/jiudi/font/SOURCEHANSANSCN-LIGHT.OTF");
+}
+@font-face{
+    font-family: 'font5';
+    src: url("https://game.flyh5.cn/resources/game/wechat/yls/jiudi/font/SOURCEHANSANSCN-MEDIUM.OTF");
+}
+@font-face{
+    font-family: 'font6';
+    src: url("https://game.flyh5.cn/resources/game/wechat/yls/jiudi/font/SOURCEHANSANSCN-NORMAL.OTF");
+}
+@font-face{
+    font-family: 'font7';
+    src: url("https://game.flyh5.cn/resources/game/wechat/yls/jiudi/font/SOURCEHANSANSCN-REGULAR_0.OTF");
+}
+@font-face{
+    font-family: 'font8';
+    src: url("https://game.flyh5.cn/resources/game/wechat/yls/jiudi/font/锐字真言体免费商用.otf");
+} */
+.whole{
+    width: 100vw;
+    height: 100vh;
+    background: url("https://game.flyh5.cn/resources/game/wechat/yls/putDrop/fangcity.jpg") no-repeat center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.liftBox{
+    width: 698rpx;
+    height: 828rpx;
+    /* background-color: red; */
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* justify-content: space-between; */
+    padding: 0 18rpx;
+    box-sizing: border-box;
+   
+}
+.liftBox>view{
+    width: 330rpx;
+    height: 185rpx;
+    background-color: aqua;
+    background: url("https://game.flyh5.cn/resources/game/wechat/yls/putDrop/woldBg.png") no-repeat center;
+    background-size:cover; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    position: relative;
+}
+.liftBox view>view{
+    width: 279rpx;
+    height: 130rpx;
+    /* background-color: red; */
+    position: relative;
+}
+.liftBox .exchange{
+    width:160rpx;
+    height: auto;
+    position: absolute;
+    left: 106rpx;
+    bottom: 15rpx; 
+}
+.liftBox .bottle{
+    width: 60rpx;
+    height: auto;
+    position: absolute;
+    left: 15rpx;
+    top: 0;
+}
+.liftBox>view:not(:nth-child(1)),.liftBox>view:not(:nth-child(2)){
+    margin-top: 45rpx;
+}
+.liftBox>view>view .num{
+    font-family: "font1";
+    color: white;
+    font-size: 139.91rpx;
+    position: absolute;
+    left: 20rpx;
+    top: -20rpx;
+}
+.liftBox>view>view .num{
+    font-size: 
+}
+.liftBox>view>view>text:nth-child(2){
+    font-family: "font1";
+    color: white;
+    font-size: 37.32rpx;
+    position: absolute;
+    left: 105rpx;
+    top: 8rpx;
+}
+.exchangeBtn{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30rpx;
+    width: 218rpx;
+    height: auto;
+}
+.levInfo,.fortunePop,.mouthPop{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.nameInfo{
+    width: 630rpx;
+    height: 760rpx;
+    background-color: aliceblue;
+    background:url("https://game.flyh5.cn/resources/game/wechat/yls/putDrop/useinfoPop.png") no-repeat center;
+    background-size: cover;
+    /* position: relative;  */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rowInfo{
+    width: 450rpx;
+    height: 410rpx;
+    background-color: red;
+}
+.useName{
+    margin-top: 31.5%;
+    margin-left: 226rpx;
+    width: 290rpx;
+    height: 55rpx;
+    background-color: transparent;
+}
+.usePhone{
+    margin-top:2.5%;
+    margin-left: 226rpx;
+    width: 290rpx;
+    height: 55rpx;
+    background-color: transparent;
+}
+.e-mail{
+    margin-top:0.5%;
+    margin-left: 226rpx;
+    width: 290rpx;
+    height: 55rpx;
+    background-color: transparent;
+}
+.address{
+    margin-top:2.5%;
+    margin-left: 226rpx;
+    width: 290rpx;
+    height: 118rpx;
+    background-color: transparent;
+}
+.subBtn{
+    width: 216rpx;
+    height: 68rpx;
+    /* background-color: antiquewhite; */
+    margin: 0 auto;
+    margin-top: 48rpx;
+}
+.closeBtn{
+    width: 48rpx;
+    height: 48rpx;
+    border-radius: 50%;
+    /* background-color: red; */
+    position: absolute;
+    right:32rpx;
+    top: 38rpx;
+}
+.cyBox{
+    width: 632rpx;
+    height: 577rpx;
+    background: url("https://game.flyh5.cn/resources/game/wechat/yls/putDrop/caiyun.png") no-repeat center;
+    background-size: cover;
+    position: relative;
+}
+.towPop{
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+    /* background-color: red; */
+    position: absolute;
+    right: 32rpx;
+    top: 34rpx;
+}
+.cyBox view:nth-child(2){
+    width: 100%;
+    text-align: center;
+    margin-top: 146rpx;
+}
+.cyBox view:nth-child(3){
+    width: 100%;
+    text-align: center;
+    margin-top: 18rpx;
+}
+.cyBox view:nth-child(4){
+    width: 100%;
+    text-align: center;
+    margin-top: 52rpx;
+}
+.cyBox view:nth-child(5){
+    width: 100%;
+    text-align: center;
+    margin-top: 24rpx;
+}
+.cyBox view:nth-child(2)>text{
+    font-family: "font1";
+    font-size: 41rpx;
+    color: #ED2F17;
+}
+.cyBox view:nth-child(3)>text{
+    font-family: "font1";
+    font-size: 41rpx;
+    color: #ED2F17;
+}
+.cyBox view:nth-child(4)>text{
+    font-family: "font1";
+    font-size: 27rpx;
+    color: #ED2F17;
+}
+.cyBox view:nth-child(5)>text{
+    font-family: "font1";
+    font-size: 27rpx;
+    color: #ED2F17;
+}
+.goUse{
+    width:220rpx;
+    height: 74rpx;
+    /* background-color: red; */
+    margin: 0 auto;
+    margin-top: 55rpx;
+}
+.xhjiudi{
+    width: 632rpx;
+    height: 576rpx;
+    background-color: aliceblue;
+    background: url("https://game.flyh5.cn/resources/game/wechat/yls/putDrop/xhjiudi.png") no-repeat center;
+    background-size: cover;
+    position: relative;
+}
+.xhjiudi>view:nth-child(1){
+    text-align: center;
+    font-family: "font1";
+    color: #DE6816;
+    font-size: 58rpx;
+    margin-top: 166rpx;
+   background: -webkit-linear-gradient(330deg, #333 0%,#EB4530 50%,#333 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.xhjiudi>view:nth-child(2){
+    text-align: center;
+    font-family: "font1";
+    color: #DE6816;
+    font-size: 58rpx;
+    margin-top: 30rpx;
+    background: -webkit-linear-gradient(330deg, #333 0%,#EB4530 50%,#333 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.closeJD{
+    width: 38rpx;
+    height: 38rpx;
+    position: absolute;
+    right: 30rpx;
+    top: 32rpx;
+    /* background-color: red; */
+    border-radius: 50%;
+}
+.comfigJD{
+    width: 214rpx;
+    height: 74rpx;
+    /* background-color: royalblue; */
+    position: absolute;
+    bottom: 55rpx;
+    left: 59rpx;
+}
+.cancleJD{
+    width: 214rpx;
+    height: 74rpx;
+    /* background-color: royalblue; */
+    position: absolute;
+    bottom: 55rpx;
+    right: 79rpx;
+}
+.cardBox{
+    width: 632rpx;
+    height: 572rpx;
+    background: no-repeat center;
+    background-size: 100% 100%;
+    position: relative;
+}
+.cardBox view{
+    color: #ED2F17;
+    font-size: 27rpx;
+    text-align: center;
+    font-family: 'font1'
+}
+.restNum{
+    position: absolute;
+    bottom: -60rpx;
+    right: 0rpx;
+    color: #B91900;
+    font-size: 27rpx;
+    font-family: "font1";
+}
+.priName{
+    width: 160rpx;
+    text-align: center;
+}
+.cardBox view:nth-child(1){
+    margin-top: 95rpx;
+}
+.cardBox view:nth-child(2){
+    margin-top: 18rpx;
+}
+.cardBox view:nth-child(3){
+    margin-top: 60rpx;
+}
+.cardBox view:nth-child(4){
+    margin-top: 18rpx;
+}
+.cardBox view:nth-child(5){
+    margin-top: 60rpx;
+}
+.okBtn{
+    width: 221rpx;
+    height: 69rpx;
+    margin: 0 auto;
+    margin-top: 50rpx;
+}
+.closebtn{
+   width: 40rpx;
+   height: 40rpx;
+   /* background-color: red; */
+   position: absolute;
+   top: 30rpx;
+   right: 30rpx;
+   border-radius: 50%;
+}
+.bugou{
+  width: 460rpx;
+}
+.setflex{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+

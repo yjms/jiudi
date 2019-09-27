@@ -1,0 +1,41 @@
+<view class="whole" style="background-image:url({{baseUrl}}/myexchange.jpg?v=1)">
+    <view class="centerBox">
+        <scroll-view scroll-y="{{true}}" class="randerBox">
+            <view class="rowBox" a:for="{{myWold}}">
+                <text>{{index+1}}.</text>
+                <text>{{item.createdDate}}</text>
+                <text>{{item.prizeName}}</text>
+                <image mode="widthFix" src="{{baseUrl}}/shiwubtn.png" class="lookBtn" onTap="lookLz" a:if="{{item.prizeType==3}}" data-id="{{item.addressId}}"/>
+                <image mode="widthFix" src="{{baseUrl}}/youkubtn.png" class="lookBtn" onTap="lookCode" a:if="{{item.prizeType==2}}" data-id="{{item.redeemId}}"/>
+                <image mode="widthFix" src="{{baseUrl}}/gouse.png" class="lookBtn"  a:if="{{item.prizeType==1}}" onTap="goFund"/>
+            </view>
+        </scroll-view>
+        <image mode="widthFix" src="{{baseUrl}}/backBtn.png" class="backBtn" onTap="backPage"/>
+    </view>
+    <!--查看兑换码  -->
+    <view class="mouthPop" hidden="{{isLook}}">
+        <view class="cardBox" style="background-image:url({{baseUrl}}/cardPop.png)">
+            <view>您的优酷会员月卡兑换码为：</view>
+            <view onLongTap="copeCode">{{codeObj.redeemCode}}</view>
+            <view>请保存好以后至优酷会员个人页</view>
+            <view>面进行兑换。</view>
+            <view>请在{{codeObj.time[0]}}年{{codeObj.time[1]}}月{{codeObj.time[2]}}日前使用</view>
+            <view class="okBtn" onTap="closePop"></view>
+            <view class="closePop" onTap="closePop"></view>
+        </view>
+    </view>
+    <!-- 查看留资状态 -->
+    <view class="mouthPop" hidden="{{lzPop}}">
+        <view class="cardBox cardBox2" style="background-image:url({{baseUrl}}/cardPop.png)">
+           <view a:if="{{addObj.sendFlag==1}}">您的兑换礼品已寄送</view>
+           <view a:if="{{addObj.sendFlag==0}}">您的兑换礼品暂未寄出</view>
+           <view a:if="{{addObj.sendFlag==1}}">请注意查收</view>
+           <view a:if="{{addObj.sendFlag==0}}">请耐心等待</view>
+           <view>收件人:{{addObj.consigneeName}}</view>
+           <view>电话:{{addObj.consigneePhone}}</view>
+           <view class="overHidden">地址:{{addObj.address}}</view>
+           <view class="accpetBtn" onTap="closePop"></view>
+           <view class="closePop" onTap="closePop"></view>
+        </view>
+    </view>
+</view>

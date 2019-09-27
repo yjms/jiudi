@@ -1,0 +1,14 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/fortuneKing/fortuneKing",
+    "pages/fangCity/fangCity",
+    "pages/myChange/myChange",
+    "pages/overBrand/overBrand",
+    "pages/webview/webview"
+  ],
+  "window": {
+    "defaultTitle": "滴一滴",
+    "allowsBounceVertical":"NO"
+  }
+}

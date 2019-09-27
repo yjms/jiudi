@@ -1,0 +1,6 @@
+<view class="whole" style="background-image:url({{baseUrl}}/caiyunjin.png)"> 
+  <view class="money">{{couponMoney}}元</view>  
+  <image mode="widthFix" src="{{baseUrl}}/goDuihuan.png" class="duihuan" onTap="goUse"/>
+  <view class="guoqiDay">后天即将过期</view>
+  <view class="workTime">{{stratTime}}-{{endTime}}</view>
+</view>

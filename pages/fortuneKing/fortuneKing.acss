@@ -1,0 +1,71 @@
+.whole{
+  width: 100vw;
+  height: 1447rpx;
+  background: center no-repeat;
+  background-size: 100% 100%;
+}
+.money{
+  font-family: 'font1';
+  font-size: 78rpx;
+  color: #ff1b02;
+  position: absolute;
+  top:282rpx;
+  text-align: center;
+  width: 100%;
+  /* margin-top: 292rpx; */
+}
+/* .money2{
+  font-family: 'font1';
+  font-size: 78rpx;
+  color: #ff1b02;
+  position: absolute;
+  top: 223rpx;
+  text-align: center;
+  width: 100%;
+} */
+.duihuan{
+  width: 440rpx;
+  height: 80rpx;
+  position: absolute;
+  left: 50%;
+  top: 440rpx;
+  transform: translateX(-50%);
+}
+/* .duihuan2{
+  width: 440rpx;
+  height: 80rpx;
+  position: absolute;
+  left: 50%;
+  top: 358rpx;
+  transform: translateX(-50%);
+} */
+.guoqiDay{
+  position: absolute;
+  top: 540rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 30rpx;
+  color: #797979;
+}
+/* .guoqiDay2{
+  position: absolute;
+  top: 468rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 30rpx;
+  color: #797979;
+} */
+.workTime{
+  top: 640rpx;
+  position: absolute;
+  left: 236rpx;
+  color: #411319;
+  font-size: 23rpx;
+}
+/* .workTime2{
+  top: 528rpx;
+  position: absolute;
+  left: 236rpx;
+  color: #411319;
+  font-size: 23rpx;
+} */

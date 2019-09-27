@@ -1,0 +1,66 @@
+<!-- 小程序收藏组件，更多高级用法请参考文档：https://docs.alipay.com/mini/component/component-favorite -->
+<view class="whole">
+  <!-- <tabs hidden="true"/> -->
+  <!-- <view>123</view> -->
+  <view class="funArea">
+      <image mode="widthFix" src="{{baseUrl}}/cloud1.png" class="cloud1"/>
+      <image mode="widthFix" src="{{baseUrl}}/cloud1.png" class="cloud2"/>
+      <image mode="widthFix" src="{{baseUrl}}/cloud1.png" class="cloud3"/>
+      <image mode="widthFix" src="{{baseUrl}}/cloud2.png" class="cloud4"/>
+      <image mode="widthFix" src="{{baseUrl}}/cloud3.png" class="cloud5"/>
+      <image mode="widthFix" src="{{baseUrl}}/centerImg.png" class="indexInfo"/>
+      <image mode="widthFix" src="{{baseUrl}}/index_14.png" class="handImg"/>
+      <image mode="widthFix" src="{{avatar}}" class="lsImg"/>
+      <view class="fangCity" onTap="linkCity">
+          <image mode="widthFix" src="{{baseUrl}}/index_15.png"/>
+      </view>
+      <view class="jiudi">
+          <image mode="widthFix" src="{{baseUrl}}/index_10.png"/>
+          <view class="wineNum">{{wineDropCount}}</view>
+      </view>
+      <view class="nickBox">
+          <view>
+            <text class="{{nickName.length>=8}}?'donghua':''">{{nickName}}</text>
+          </view>
+      </view>
+      <!-- 翻牌子 onTap="tips"-->
+      <image mode="widthFix" src="{{baseUrl}}/index_16.png" class="overBrand" onTap="overBrand" a:if="{{dayNum>=7}}"/>
+       <image mode="widthFix" src="{{baseUrl}}/noOver.png" class="overBrand"  a:if="{{dayNum<7}}" />
+      <!-- 水滴 -->
+      <text>{{wineDropCount}}</text>
+      <image mode="widthFix" src="{{baseUrl}}/Drops.png" class="Drops1" style="animation: animat6 3s ease-out; animation-iteration-count:{{wineDropCount}};animation-delay:0s;"/>
+      <!-- 水滴2 -->
+      <image mode="widthFix" src="{{baseUrl}}/Drops2.png" class="Drops2" style="animation: animat7 3s ease-out; animation-iteration-count:{{wineDropCount}}; animation-delay:{{delays}}s;"/>
+      <!-- 水滴3 -->
+      <image mode="widthFix" src="{{baseUrl}}/Drops3.png" class="Drops3" style="animation: animat8 3s ease-out; animation-iteration-count:{{wineDropCount}}; animation-delay:{{delays}}s;  "/>
+      <!-- 活动规则按钮 -->
+      <view class="activeBtn" onTap="activePop">活动规则</view>
+      <!-- 活动规则弹窗 -->
+      <view class="rulePop" a:if="{{popShow}}">
+           <image mode="widthFix" src="{{baseUrl}}/ruls.png"/>
+           <view class="closeBtn" onTap="closePop"></view>
+      </view>
+      <!-- 签到天数弹窗 -->
+      <view class="qdPop" hidden="{{qdshow || dayNum>7}}">
+          <view class="qiandao" style="background-image:url({{baseUrl}}/qiandao.png)">
+              <image mode="widthFix" src="{{baseUrl}}/{{qdDay[dayNum-1]}}" class="days" />
+              <view class="closeQd" onTap="closePop"></view>
+          </view>
+      </view>
+      <image mode="widthFix" src="{{baseUrl}}/maotai.png" class="maotai"/>
+      <view class="zouma">
+           <swiper  autoplay="{{true}}" vertical="{{true}}" circular="{{true}}">
+                <block a:for="{{zouma}}">
+                    <swiper-item >
+                        <view class="s_txt">恭喜<text style="color:#FF0000">{{item.nickName.substr(0,1)}}**</text>兑换<text style="color:#FF0000">{{item.prizeName}}</text>成功</view>
+                    </swiper-item>
+                </block>
+           </swiper>
+      </view>
+     
+  </view>
+  <view class="useLogin" a:if="{{islogin}}">
+    <button a:if="{{canIUseAuthButton}}" open-type="getAuthorize" onGetAuthorize="onGetAuthorize" onError="onAuthError" scope='userInfo'>会员基础信息授权</button>
+    <image mode="widthFix" src="{{baseUrl}}/index_2.png" onTap="tapname"/>
+  </view>
+</view>

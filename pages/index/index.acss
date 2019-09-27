@@ -1,0 +1,484 @@
+.whole{
+    width: 100vw;
+    height: 100vh;
+    background:url("https://game.flyh5.cn/resources/game/wechat/yls/putDrop/index_23.jpg") no-repeat center;
+    background-size:cover;
+    display: flex;
+    align-items: center;
+}
+.funArea{
+    width: 100%;
+    height: 1116rpx;
+    position: relative;
+}
+.cloud1{
+    width: 171rpx;
+    height: auto;
+    position: absolute;
+    top: 230rpx;
+    left: -30rpx;
+    animation: 40s animat1 linear infinite;
+    z-index: 1;
+}
+.cloud2{
+    width: 171rpx;
+    height: auto;
+    position: absolute;
+    top:372rpx;
+    right: 0;
+    transform: rotateY(180deg);  
+    animation: 40s animat2 linear infinite;
+    z-index: 1;
+}
+.cloud3{
+    width: 171rpx;
+    height: auto;
+    position: absolute;
+    top:659rpx;
+    right: -80rpx;
+    animation: 40s animat3 linear infinite;
+    z-index: 1;
+}
+.cloud4{
+    width: 603rpx;
+    height: auto;
+    position: absolute;
+    left: -420rpx;
+    top: 692rpx;
+    animation: 40s animat4 linear infinite;
+}
+.cloud5{
+    position: absolute;
+    width: 266rpx;
+    height: auto;
+    top: 850rpx;
+    right: -100rpx;
+    animation: 40s animat5 linear infinite;
+}
+.indexInfo{
+    width: 741rpx;
+    height: auto;
+    position: absolute;
+    top: 48rpx;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99;
+}
+.handImg{
+    width: 114rpx;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 38rpx;
+    z-index: 99;
+    position: absolute;
+}
+.fangCity{
+    width: 58rpx;
+    height: 194rpx;
+    /* background-color: white; */
+    z-index: 100;
+    position: absolute;
+    left: 98rpx;
+    top: 440rpx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fangCity image{
+    width: 100%;
+    height: auto;
+}
+.jiudi{
+    width: 60rpx;
+    height:236rpx;
+    top:446rpx;
+    right: 111rpx;
+    position: absolute;
+    z-index: 100;
+    display: flex;
+    justify-content: center;
+}
+.jiudi image{
+    width: 30rpx;
+    height: 144rpx !important;
+    margin-top: 20rpx;
+}
+.lsImg{
+    width:75rpx;
+    height: 75rpx !important;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top:62rpx;
+    z-index: 123; 
+    border-radius: 50%;
+}
+.nickBox{
+    width: 190rpx;
+    height: 43rpx;
+    border-radius: 6rpx;
+    position: absolute;
+    left: 275rpx;
+    top:14%;
+    z-index: 123; 
+    background: url('https://game.flyh5.cn/resources/game/wechat/yls/putDrop/index_13.png') no-repeat center;
+    background-size:cover; 
+    box-sizing: border-box;
+    /* padding-top: 2rpx; */
+    padding-left: 22rpx;
+    overflow: hidden;
+}
+.nickBox view{
+    width: 150rpx;
+    height: 100%;
+    /* background-color: red; */
+    /* margin: 0 auto; */
+    line-height: 43rpx;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+.nickBox text{
+    font-size: 22rpx;
+    color: #333;
+    display: block;
+    width: 90%;
+    /* overflow: hidden; */
+    white-space: nowrap;
+    text-align: center;
+}
+.nickBox .donghua{
+    animation: 5s traLeft linear infinite;
+}
+.overBrand{
+    width: 316rpx;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20rpx;
+    z-index: 123;
+    position: absolute;
+}
+.Drops1{
+    width: 12rpx;
+    height: auto;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 493rpx;
+    z-index: 1234;
+    position: absolute;
+    opacity: 0;
+}
+.Drops2{
+    width: 25rpx;
+    height: auto;
+    position: absolute;
+    left: 334rpx;
+    top: 546rpx;
+    z-index: 1334;
+    animation-delay:2s; 
+    opacity: 0;
+}
+.Drops3{
+    width: 16rpx;
+    height: auto;
+    position: absolute;
+    left: 394rpx;
+    top: 546rpx;
+    z-index: 1334;
+    transform: rotate(90deg);
+    animation-delay:2s; 
+    opacity: 0;
+}
+.activeBtn{
+    width: 188rpx;
+    height: 50rpx;
+    color: white;
+    background-color: #df5a62;
+    position: absolute;
+    right: 0;
+    top: 60rpx;
+    z-index: 123;
+    border-top-left-radius:25rpx;
+    border-bottom-left-radius:25rpx;  
+    line-height: 55rpx;
+    text-align: center;
+    font-size: 31rpx;
+}
+.rulePop{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 2009;
+    overflow-x: hidden;
+}
+.qdPop{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.8);
+    z-index: 2009;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rulePop image{
+    position: fixed;
+    width:880rpx;
+    height: auto;
+    left: -120rpx; 
+    top: 120rpx;
+}
+.closeBtn{
+    width: 78rpx;
+    height: 78rpx;
+    border-radius: 50%;
+    position: fixed;
+    top:1012rpx;
+    left: 338rpx; 
+}
+.maotai{
+    position: absolute;
+    width: 102rpx;
+    height: auto;
+    z-index: 126;
+    left: 18rpx;
+    top: 607rpx;
+}
+.zouma{
+    width: 424rpx;
+    height: 52rpx;
+    /* background-color: red; */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 880rpx;
+    z-index: 999;
+}
+.zouma swiper{
+    width: 100%;
+    height: 50%;
+}
+.s_txt{
+    font-size: 25rpx;
+    text-align: center;
+}
+.useLogin{
+    width: 100vw;
+    position: absolute;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.useLogin image{
+    width: 314rpx;
+    height: auto;
+}
+.useLogin button{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0.01;
+}
+.wineNum{
+  position: absolute;
+  top: 180rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 18.69rpx;
+  z-index: 999;
+  color: white;
+}
+.qiandao{
+  width: 638rpx;
+  height: 564rpx;
+  background: center no-repeat;
+  background-size: 100% 100%;
+  /* position: fixed; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.days{
+  width: 566rpx;
+  height: auto;
+}
+.closeQd{
+  width: 45rpx;
+  height: 45rpx;
+  border-radius: 50%;
+  /* background-color: red; */
+  position: absolute;
+  right: 30rpx;
+  top:30rpx;
+}
+.jdnum{
+   position: absolute;
+   left: 50%;
+   top: 255rpx;
+   transform: translateX(-50%); 
+   border-radius:8rpx;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 26rpx;
+   font-weight: 800;  
+   color: #0068B7;
+   background-color: white;
+   height: 46rpx;
+   border: 2rpx solid #0068B7; 
+   letter-spacing: 4rpx;
+   padding: 0 10rpx;
+   box-shadow:inset 0rpx 15rpx 20rpx -20rpx #000;
+   z-index: 999;
+}
+.tipTxt{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150rpx;
+}
+.nums{
+  font-size: 40rpx;
+  font-weight: 900;
+  display: block;
+  width: 70rpx;
+  position: absolute;
+  left: 59.5%;
+  top: 283rpx;
+  color: #E15F1C;
+  text-align: center;
+}
+/* .workTime{
+  color: #D24323;
+  position: absolute;
+  left: 25%;
+  top: 20%;
+  color: 19rpx;
+  font-family: 'font1';
+} */
+@keyframes traLeft{
+    0%{
+        transform:translateX(0%); 
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+@keyframes animat1{
+    0%{
+        left: -30rpx;
+    }
+    50%{
+        left: 400rpx;
+    }
+    100%{
+        left: -171rpx;
+    }
+}
+
+@keyframes animat2{
+    0%{
+        right: 0;
+    }
+    50%{
+        right: 400rpx;
+    }
+    100%{
+        right: -171rpx;
+    }
+}
+@keyframes animat3{
+    0%{
+        right: 0;
+    }
+    50%{
+        right: 400rpx;  
+    }
+    100%{
+        right: -171rpx;
+    }
+}
+@keyframes animat4{
+    0%{
+        left: -420rpx;
+    }
+    25%{
+        left: 0rpx;
+    }
+    50%{
+        left: 420rpx;
+    }
+    75%{
+        left:0rpx; 
+    }
+    100%{
+        left:-420rpx;
+    }
+}
+@keyframes animat5{
+    0%{
+        right: -100rpx;
+    }
+    50%{
+        right: 400rpx;
+    }
+    100%{
+        right: -100rpx;
+    }
+}
+@keyframes animat6{
+    0%{
+        opacity: 1;
+        top: 523rpx;
+    }
+    80%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 0;
+        top: 543rpx;
+    }
+}
+@keyframes animat7{
+    80%{
+        opacity: 1;
+    }
+    90%{  
+        opacity: 0; 
+    }
+    100%{
+        left: 264rpx;
+        top: 516rpx;
+        opacity: 0;
+    }
+   
+}
+@keyframes animat8{
+    80%{
+        opacity: 1;
+    }
+    90%{
+        opacity: 0;
+    }
+    100%{
+        left: 426rpx;
+        top: 520rpx;
+        opacity: 0;
+    }
+   
+}
