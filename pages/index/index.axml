@@ -25,8 +25,8 @@
           </view>
       </view>
       <!-- 翻牌子 onTap="tips"-->
-       <image mode="widthFix" src="{{baseUrl}}/noOver.png" class="overBrand" onTap="overBrand" a:if="{{dayNum>=7}}"/>
-       <image mode="widthFix" src="{{baseUrl}}/noOver.png?v_1" class="overBrand"  a:if="{{dayNum<7}}" onTap="tipsOver"/>
+       <image mode="widthFix" src="{{baseUrl}}/nosigin.png" class="overBrand" onTap="overBrand" a:if="{{isSigin}}"/>
+       <image mode="widthFix" src="{{baseUrl}}/noOver.png?v_1" class="overBrand"  a:if="{{!isSigin}}" onTap="tipsOver"/>
       <!-- 提示文字 -->
       <image mode="widthFix" src="{{baseUrl}}/tipTxt.png" class="tipTxt"/>
       <!-- 水滴 -->
@@ -38,24 +38,28 @@
       <!-- 活动规则按钮 -->
       <view class="activeBtn" onTap="activePop">活动规则</view>
       <!-- 活动规则弹窗 -->
-      <view class="rulePop" a:if="{{popShow}}">
-           <image mode="widthFix" src="{{baseUrl}}/after_ruls.png"/>
-           <view class="closeBtn" onTap="closePop"></view>
-           <!-- <text class="workTime">2019年9月12日-12月20日23:59</text> -->
+      <view class="rulePop" a:if="{{popShow}}"> 
+           <!-- <image mode="widthFix" src="{{baseUrl}}/rule_01.png"/> -->
+           <view class="rule_img" style="background-image:url({{baseUrl}}/rule_01.png)">
+               <view class="closeBtn" onTap="closePop"></view>
+               <text class="workTime">2019年9月12日-12月20日23:59</text>
+           </view>
+          
       </view>
       <!-- 签到天数弹窗 -->
-      <view class="qdPop" hidden="{{qdshow || dayNum==7}}">
-          <view class="qiandao" style="background-image:url({{baseUrl}}/sigin_succ.png)">
-              <text class="nums">{{dayNum}}</text>
+      <view class="qdPop" hidden="{{qdshow || dayNum%7==0}}">
+          <view class="qiandao" style="background-image:url({{baseUrl}}/sigin_succ.png?v)">
+              <text class="nums">{{wineDropCount}}</text>
+              <text class="tipTxt2"> {{7-dayNum%7}} </text>
               <view class="closeQd" onTap="closePop"></view>
           </view>
       </view>
       <!-- 签到获取酒滴数弹窗 -->
-      <view class="qdPop" hidden='{{qdshow2}}'>
+      <!-- <view class="qdPop" hidden='{{qdshow2}}'>
           <view class="qiandao" style="background-image:url({{baseUrl}}/succSign.png)">
               <view class="closeQd" onTap="closePop"></view>
           </view>
-      </view>
+      </view> -->
       <image mode="widthFix" src="{{baseUrl}}/maotai.png" class="maotai" onTap="linkCity"/>
       <view class="zouma">
            <swiper  autoplay="{{true}}" vertical="{{true}}" circular="{{true}}">
@@ -66,7 +70,6 @@
                 </block>
            </swiper>
       </view>
-     
   </view>
   <view class="useLogin" a:if="{{islogin}}">
     <button a:if="{{canIUseAuthButton}}" open-type="getAuthorize" onGetAuthorize="onGetAuthorize" onError="onAuthError" scope='userInfo'>会员基础信息授权</button>

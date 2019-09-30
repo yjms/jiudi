@@ -17,6 +17,7 @@ Page({
          qdshow:true,
          qdshow2:true,
          delays:2,
+         isSigin:true
     },
   onLoad(query) {
     // 页面加载  
@@ -76,9 +77,7 @@ Page({
       this.setData({popShow:true});
   },
   overBrand(){
-      my.navigateTo({
-          url:"/pages/overBrand/overBrand"
-      });
+      my.showToast({content:"今日已签到！"});
     },
  onGetAuthorize(res){
    let self = this;
@@ -124,13 +123,18 @@ Page({
             }
            http.Post('signIn/signIn',dat,'post').then((data)=>{
                if(data.data.code=='0000'){
-                 this.setData({dayNum:data.data.result.dayNum})
+                 this.setData({dayNum:data.data.result.dayNum,isSigin:true})
+                 this.getWinedrops();
                  if(data.data.result.signIn){
-                    console.log('连续登陆多少天',data.data.result.dayNum)
-                    this.setData({dayNum:data.data.result.dayNum,qdshow2:false})
+                    console.log('连续登陆多少天',data.data.result.dayNum,'==',data.data.result.dayNum%7==0)
+                    if(data.data.result.dayNum%7==0){
+                        my.navigateTo({
+                              url:"/pages/overBrand/overBrand"
+                        });
+                        return;
+                    }
+                    this.setData({dayNum:data.data.result.dayNum,isSigin:true,qdshow:false})
                  }
-                  // console.log(data.data);
-                  this.getWinedrops();
                }
            })
   },
@@ -142,7 +146,7 @@ Page({
            http.Post('signIn/wineCount',dat,'post').then((data)=>{
                if(data.data.code=='0000'){
                   console.log('酒滴数',data.data.result.wineDropCount);
-                  this.setData({wineDropCount:data.data.result.wineDropCount,delays:2})
+                  this.setData({wineDropCount:data.data.result.wineDropCount,delays:2,isSigin:data.data.result.signUp})
                }
            })
   },

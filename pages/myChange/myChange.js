@@ -7,6 +7,7 @@ Page({
       lzPop:true,
       codeObj:'',
       addObj:'',//查看地址信息对象
+      biglength:true
   },
   onLoad() {
      this.myexchange();
@@ -61,10 +62,10 @@ Page({
                let str = res.data.result[i].createdDate.split(' ');
                res.data.result[i].createdDate = str[0];
              }
-             this.setData({myWold:res.data.result})
+             this.setData({myWold:res.data.result,biglength:res.data.result.length>0})
           }
-           console.log('我的奖品',this.data.myWold)
-           console.log('返回的数据',res.data.result)
+          //  console.log('我的奖品',this.data.myWold)
+          //  console.log('返回的数据',res.data.result)
       })
   },
   closePop(){

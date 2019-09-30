@@ -247,8 +247,8 @@
     transform: translateX(-50%); 
 }
 .closeBtn{
-    width: 48rpx;
-    height: 48rpx;
+    width: 65rpx;
+    height: 65rpx;
     border-radius: 50%;
     /* background-color: red; */
     position: absolute;
@@ -458,7 +458,7 @@
   justify-content: center;
   align-items: center;
 }
-.jdnum{
- 
+.setstyle{
+  color: #666;
 }
 

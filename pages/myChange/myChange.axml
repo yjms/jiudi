@@ -1,6 +1,7 @@
 <view class="whole" style="background-image:url({{baseUrl}}/myexchange.jpg?v=1)">
     <view class="centerBox">
-        <scroll-view scroll-y="{{true}}" class="randerBox">
+        <view class="setstyle" a:if="{{!biglength}}">- 暂无数据 -</view>
+        <scroll-view scroll-y="{{true}}" class="randerBox" a:if="{{biglength}}">
             <view class="rowBox" a:for="{{myWold}}">
                 <text>{{index+1}}.</text>
                 <text>{{item.createdDate}}</text>

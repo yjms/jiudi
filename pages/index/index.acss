@@ -215,6 +215,9 @@
     background-color: rgba(0,0,0,0.8);
     z-index: 2009;
     overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .qdPop{
     width: 100vw;
@@ -228,20 +231,22 @@
     justify-content: center;
     align-items: center;
 }
-.rulePop image{
-    position: fixed;
-    width:880rpx;
-    height: auto;
-    left: -120rpx; 
-    top: 120rpx;
+.rulePop>.rule_img{
+    /* position: fixed; */
+    width:100%;
+    height: 1173rpx;
+    background: center no-repeat;
+    background-size: cover;
+    position: relative;
 }
 .closeBtn{
     width: 78rpx;
     height: 78rpx;
     border-radius: 50%;
-    position: fixed;
-    top:1012rpx;
-    left: 338rpx; 
+    position: absolute;
+    bottom:0rpx;
+    left: 50%;
+    transform: translateX(-50%); 
 }
 .maotai{
     position: absolute;
@@ -352,6 +357,21 @@
   transform: translateX(-50%);
   width: 150rpx;
 }
+.tipTxt2{
+  /* font-family: "font1"; */
+  position:absolute;
+  font-weight: 900;
+  font-size: 25rpx;
+  bottom: 94rpx;
+  left: 60%;
+  /* transform: translateX(-50%); */
+  color: #EC3622;
+  /* width: 100%; */
+  text-align: center;
+  /* background: -webkit-linear-gradient(330deg, #333 0%,#EB4530 50%,#333 100%); */
+  /* -webkit-background-clip: text; */
+  /* -webkit-text-fill-color: transparent; */
+}
 .nums{
   font-size: 40rpx;
   font-weight: 900;
@@ -359,18 +379,19 @@
   width: 70rpx;
   position: absolute;
   left: 59.5%;
-  top: 283rpx;
+  top: 288rpx;
   color: #E15F1C;
   text-align: center;
 }
-/* .workTime{
+.workTime{
   color: #D24323;
   position: absolute;
-  left: 25%;
-  top: 20%;
+  left: 20%;
+  top: 18%;
   color: 19rpx;
   font-family: 'font1';
-} */
+  font-size: 20rpx;
+}
 @keyframes traLeft{
     0%{
         transform:translateX(0%); 
@@ -444,7 +465,7 @@
 @keyframes animat6{
     0%{
         opacity: 1;
-        top: 523rpx;
+        top: 495rpx;
     }
     80%{
         opacity: 0;

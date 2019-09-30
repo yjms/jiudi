@@ -1,5 +1,6 @@
 <view class="whole">
-    <scroll-view scroll-y="{{true}}" class="liftBox">
+    <view a:if="{{!biglength}}" class="setstyle">-暂无数据-</view>
+    <scroll-view scroll-y="{{true}}" class="liftBox" a:if="{{biglength}}">
         <view class="jdnum">已酿造 {{wineCount}} 滴</view>
         <view a:for="{{shopList}}" class="shoplist">
             <view >

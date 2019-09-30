@@ -27,6 +27,7 @@ Page({
       otherText:'',//其他奖品文案
       changePage:false,
       wineCount:0,//个人酒滴数
+      biglength:true,
   },
   onLoad() {
     this.getshopList();
@@ -38,9 +39,6 @@ Page({
       });
   },
   exchange(e){//兑换按钮
-      console.log(e)
-      // return;
-      this.setData({xhJD:false})
       this.setData({
           type:e.currentTarget.dataset.type,
           prizeId:e.currentTarget.dataset.wid,
@@ -51,16 +49,15 @@ Page({
           couponMoney:e.currentTarget.dataset.couponMoney,
           otherText:e.currentTarget.dataset.other
       })
-      console.log(this.data.type,'--',this.data.prizeId,'==',this.data.xhnum,'==',this.data.prizeName)
-  },
-  comfigJD(){//消耗酒滴确定
-      // console.log("酒滴数确认");
-      console.log("自己酒滴数",this.data.wineCount,"消耗酒滴数",this.data.xhnum);
-      
-      if(this.data.wineCount<this.data.xhnum){
+      if(this.data.wineCount0<this.data.xhnum){
           this.setData({xhJD:true,jdbugou:false})
           return;
       }
+      this.setData({xhJD:false})
+      console.log("自己酒滴数",this.data.wineCount,"消耗酒滴数",this.data.xhnum);
+  },
+  comfigJD(){//消耗酒滴确定
+      // console.log("酒滴数确认");
       let dat ={
         userId: my.getStorageSync({ key: 'useId' }).data,
         prizeId:this.data.prizeId
@@ -214,7 +211,7 @@ Page({
   getshopList(){//获取所有奖品
       http.Post2('wineApi/signIn/selectAllPrize',{},'post').then((res)=>{
         if(res.data.code=="0000")
-        this.setData({shopList:res.data.result});
+        this.setData({shopList:res.data.result,biglength:res.data.result.length>0});
         console.log(res.data.result,this.data.shopList);
       })
   },
