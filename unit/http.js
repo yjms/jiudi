@@ -1,5 +1,6 @@
 function Post(url, param, method){
-  let baseurl = 'https://dev.flyh5.cn/winedrops/wineApi/';
+  // let baseurl = 'https://dev.flyh5.cn/winedrops/wineApi/';//自己服务器
+  let baseurl = 'https://cmfchina.mediasunny.net/winedrops/wineApi/';
   // console.log(mstr);
   return new Promise((resolve,reject)=>{
    my.httpRequest({

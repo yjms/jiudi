@@ -1,78 +1,87 @@
 <!-- 小程序收藏组件，更多高级用法请参考文档：https://docs.alipay.com/mini/component/component-favorite -->
-<view class="whole">
-  <!-- <tabs hidden="true"/> -->
-  <!-- <view>123</view> -->
-  <view class="funArea">
-      <view class="jdnum">已酿造 {{wineDropCount}} 滴</view>
-      <image mode="widthFix" src="{{baseUrl}}/cloud1.png" class="cloud1"/>
-      <image mode="widthFix" src="{{baseUrl}}/cloud1.png" class="cloud2"/>
-      <image mode="widthFix" src="{{baseUrl}}/cloud1.png" class="cloud3"/>
-      <image mode="widthFix" src="{{baseUrl}}/cloud2.png" class="cloud4"/>
-      <image mode="widthFix" src="{{baseUrl}}/cloud3.png" class="cloud5"/>
-      <image mode="widthFix" src="{{baseUrl}}/centerImg.png" class="indexInfo"/>
-      <image mode="widthFix" src="{{baseUrl}}/index_14.png" class="handImg"/>
-      <image mode="widthFix" src="{{avatar}}" class="lsImg"/>
-      <view class="fangCity" onTap="linkCity">
-          <image mode="widthFix" src="{{baseUrl}}/index_15.png"/>
-      </view>
-      <!-- <view class="jiudi">
-          <image mode="widthFix" src="{{baseUrl}}/index_10.png"/>
-          <view class="wineNum">{{wineDropCount}}</view>
-      </view> -->
-      <view class="nickBox">
-          <view>
-            <text class="{{nickName.length>=8}}?'donghua':''">{{nickName}}</text>
-          </view>
-      </view>
-      <!-- 翻牌子 onTap="tips"-->
-       <image mode="widthFix" src="{{baseUrl}}/nosigin.png" class="overBrand" onTap="overBrand" a:if="{{isSigin}}"/>
-       <image mode="widthFix" src="{{baseUrl}}/noOver.png?v_1" class="overBrand"  a:if="{{!isSigin}}" onTap="tipsOver"/>
-      <!-- 提示文字 -->
-      <image mode="widthFix" src="{{baseUrl}}/tipTxt.png" class="tipTxt"/>
-      <!-- 水滴 -->
-      <image mode="widthFix" src="{{baseUrl}}/Drops.png" class="Drops1" style="animation: animat6 3s ease-in; animation-iteration-count:{{wineDropCount}}"/>
-      <!-- 水滴2 -->
-      <image mode="widthFix" src="{{baseUrl}}/Drops2.png" class="Drops2" style="animation: animat7 3s ease-out; animation-iteration-count:{{wineDropCount}}; animation-delay:{{delays}}s;"/>
-      <!-- 水滴3 -->
-      <image mode="widthFix" src="{{baseUrl}}/Drops3.png" class="Drops3" style="animation: animat8 3s ease-out; animation-iteration-count:{{wineDropCount}}; animation-delay:{{delays}}s;  "/>
-      <!-- 活动规则按钮 -->
-      <view class="activeBtn" onTap="activePop">活动规则</view>
-      <!-- 活动规则弹窗 -->
-      <view class="rulePop" a:if="{{popShow}}"> 
-           <!-- <image mode="widthFix" src="{{baseUrl}}/rule_01.png"/> -->
-           <view class="rule_img" style="background-image:url({{baseUrl}}/rule_01.png)">
-               <view class="closeBtn" onTap="closePop"></view>
-               <text class="workTime">2019年9月12日-12月20日23:59</text>
-           </view>
-          
-      </view>
-      <!-- 签到天数弹窗 -->
-      <view class="qdPop" hidden="{{qdshow || dayNum%7==0}}">
-          <view class="qiandao" style="background-image:url({{baseUrl}}/sigin_succ.png?v)">
-              <text class="nums">{{wineDropCount}}</text>
-              <text class="tipTxt2"> {{7-dayNum%7}} </text>
-              <view class="closeQd" onTap="closePop"></view>
-          </view>
-      </view>
-      <!-- 签到获取酒滴数弹窗 -->
-      <!-- <view class="qdPop" hidden='{{qdshow2}}'>
-          <view class="qiandao" style="background-image:url({{baseUrl}}/succSign.png)">
-              <view class="closeQd" onTap="closePop"></view>
-          </view>
-      </view> -->
-      <image mode="widthFix" src="{{baseUrl}}/maotai.png" class="maotai" onTap="linkCity"/>
-      <view class="zouma">
-           <swiper  autoplay="{{true}}" vertical="{{true}}" circular="{{true}}">
-                <block a:for="{{zouma}}">
-                    <swiper-item >
-                        <view class="s_txt">恭喜<text style="color:#FF0000">{{item.nickName.substr(0,1)}}**</text>兑换<text style="color:#FF0000">{{item.prizeName}}</text>成功</view>
-                    </swiper-item>
-                </block>
-           </swiper>
-      </view>
+<view class="addHeight" style="height:{{popShow?'100vh':'128vh'}}"> 
+  <!-- <image mode="widthFix" src="{{baseUrl}}/rule_01.png" class="setopt"/> -->
+  <view class="whole">
+    <!-- <tabs hidden="true"/> -->
+    <!-- <view>123</view> -->
+    <view class="funArea">
+        <view class="jdnum">已酿造 {{wineDropCount}} 滴</view>
+        <image mode="widthFix" src="{{baseUrl}}/cloud1.png" class="cloud1"/>
+        <image mode="widthFix" src="{{baseUrl}}/cloud1.png" class="cloud2"/>
+        <image mode="widthFix" src="{{baseUrl}}/cloud1.png" class="cloud3"/>
+        <image mode="widthFix" src="{{baseUrl}}/cloud2.png" class="cloud4"/>
+        <image mode="widthFix" src="{{baseUrl}}/cloud3.png" class="cloud5"/>
+        <image mode="widthFix" src="{{baseUrl}}/centerImg.png" class="indexInfo"/>
+        <image mode="widthFix" src="{{baseUrl}}/index_14.png" class="handImg"/>
+        <image mode="widthFix" src="{{avatar}}" class="lsImg"/>
+        <view class="fangCity" onTap="linkCity">
+            <image mode="widthFix" src="{{baseUrl}}/index_15.png"/>
+        </view>
+        <!-- <view class="jiudi">
+            <image mode="widthFix" src="{{baseUrl}}/index_10.png"/>
+            <view class="wineNum">{{wineDropCount}}</view>
+        </view> -->
+        <view class="nickBox">
+            <view>
+              <text class="{{nickName.length>=8}}?'donghua':''">{{nickName}}</text>
+            </view>
+        </view>
+        <!-- 翻牌子 onTap="tips"-->
+        <image mode="widthFix" src="{{baseUrl}}/nosigin.png?v_1" class="overBrand" onTap="overBrand" a:if="{{isSigin}}"/>
+        <image mode="widthFix" src="{{baseUrl}}/noOver.png?v_2" class="overBrand"  a:if="{{!isSigin}}" onTap="tipsOver"/>
+        <!-- 提示文字 -->
+        <image mode="widthFix" src="{{baseUrl}}/tipTxt.png" class="tipTxt"/>
+        <!-- 水滴 -->
+        <image mode="widthFix" src="{{baseUrl}}/Drops.png" class="Drops1" style="animation: animat6 3s ease-in; animation-iteration-count:{{wineDropCount}}"/>
+        <!-- 水滴2 -->
+        <image mode="widthFix" src="{{baseUrl}}/Drops2.png" class="Drops2" style="animation: animat7 3s ease-out; animation-iteration-count:{{wineDropCount}}; animation-delay:{{delays}}s;"/>
+        <!-- 水滴3 -->
+        <image mode="widthFix" src="{{baseUrl}}/Drops3.png" class="Drops3" style="animation: animat8 3s ease-out; animation-iteration-count:{{wineDropCount}}; animation-delay:{{delays}}s;  "/>
+        <!-- 活动规则按钮 -->
+        <view class="activeBtn" onTap="activePop">活动规则</view>
+        <!-- 活动规则弹窗 -->
+        <view class="rulePop" a:if="{{popShow}}"> 
+            <!-- <image mode="widthFix" src="{{baseUrl}}/rule_01.png"/> -->
+            <view class="rule_img" style="background-image:url({{baseUrl}}/rule_01.png?v-1)">
+                <view class="closeBtn" onTap="closePop"></view>
+                <text class="workTime">2019年9月12日-12月20日23:59</text>
+            </view>
+        </view>
+        <!-- 签到天数弹窗  -->
+        <view class="qdPop" hidden="{{qdshow || dayNum%7==0}}">
+            <view class="qiandao" style="background-image:url({{baseUrl}}/sigin_succ.png?v_1)">
+                <text class="nums">{{wineDropCount}}</text>
+                <text class="tipTxt2"> {{7-dayNum%7}} </text>
+                <view class="closeQd" onTap="closePop"></view>
+            </view>
+        </view>
+        <!-- 签到获取酒滴数弹窗 -->
+        <!-- <view class="qdPop" hidden='{{qdshow2}}'>
+            <view class="qiandao" style="background-image:url({{baseUrl}}/succSign.png)">
+                <view class="closeQd" onTap="closePop"></view>
+            </view>
+        </view> -->
+        <image mode="widthFix" src="{{baseUrl}}/maotai.png" class="maotai" onTap="linkCity"/>
+        <view class="zouma">
+            <swiper  autoplay="{{true}}" vertical="{{true}}" circular="{{true}}">
+                  <block a:for="{{zouma}}">
+                      <swiper-item >
+                          <view class="s_txt">恭喜<text style="color:#FF0000">{{item.nickName.substr(0,1)}}**</text>兑换<text style="color:#FF0000">{{item.prizeName}}</text>成功</view>
+                      </swiper-item>
+                  </block>
+            </swiper>
+        </view>
+    </view>
+    <view class="useLogin" a:if="{{islogin}}">
+      <button a:if="{{canIUseAuthButton}}" open-type="getAuthorize" onGetAuthorize="onGetAuthorize" onError="onAuthError" scope='userInfo'>会员基础信息授权</button>
+      <image mode="widthFix" src="{{baseUrl}}/index_2.png" onTap="tapname"/>
+    </view>
   </view>
-  <view class="useLogin" a:if="{{islogin}}">
-    <button a:if="{{canIUseAuthButton}}" open-type="getAuthorize" onGetAuthorize="onGetAuthorize" onError="onAuthError" scope='userInfo'>会员基础信息授权</button>
-    <image mode="widthFix" src="{{baseUrl}}/index_2.png" onTap="tapname"/>
+  <view class="addImg" onTap="gofunture" a:if="{{!popShow}}">
+      <image mode="widthFix" src="{{baseUrl}}/caifuimg.png" class="footimg1"/>
+      <image mode="widthFix" src="{{baseUrl}}/caifutxt.png" class="footimg2"/>
   </view>
+  <image mode="widthFix" src="{{baseUrl}}/caifuhand.png" class="footimg3"/>
 </view>
+
+<!-- 55556565 -->

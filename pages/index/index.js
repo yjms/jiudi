@@ -7,7 +7,7 @@ Page({
          canIUseAuthButton:true,
          useInfo:'',
          islogin:true,
-         wineDropCount:100,
+         wineDropCount:0,
          nickName:'滴一滴',
          avatar:'',
          qdDay:[
@@ -25,11 +25,9 @@ Page({
     let isUse = my.getStorageSync({ key: 'useId' }).data;
     let useInfo = my.getStorageSync({ key: 'usrinfo' }).data;
     console.log(useInfo)
-    // let isUse = my.getStorageSync({ key: 'useId' }).data;
     console.log('是否有用户id',isUse)
     if(isUse&&isUse!=''){
        this.setData({islogin:false,nickName:useInfo.nickName,avatar:useInfo.avatar})
-      //  this.signIn(isUse);
     }
   },
   onReady() {
@@ -104,12 +102,12 @@ Page({
             }
            http.Post('signIn/auth',dat,'post').then((data)=>{
                if(data.data.code=='0000'){
-                  self.setData({useInfo:data.data.result,islogin:false,nickName:userInfo.nickName, avatar:userInfo.avatar});
+                  self.setData({useInfo:data.data.result,islogin:false,nickName:userInfo.nickName, avatar:userInfo.avatar,wineDropCount:data.data.result.wineDropCount,isSigin:false});
                   my.setStorageSync({
                     key: 'useId', // 缓存数据的key
                     data: data.data.result.userId, // 要缓存的数据
                   });
-                  self.signIn(data.data.result.userId);
+                  // self.signIn(data.data.result.userId);
                }
            }) 
       }
@@ -118,6 +116,7 @@ Page({
     })
   }, 
   signIn(){
+        // console.log("点击签到");
         let dat ={
                 userId:my.getStorageSync({ key: 'useId' }).data
             }
@@ -159,9 +158,13 @@ Page({
         }
     })
   },
-  tipsOver(){
+  tipsOver(e){
+      console.log(666)
       this.setData({qdshow:false});
       this.signIn();
+  },
+  gofunture(){
+      my.ap.navigateToFinance({ type: 'wealthShop',pid: '2088701513320211'});
   }
   // ,
   // tips(){

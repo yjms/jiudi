@@ -28,6 +28,7 @@ require('../../pages/fortuneKing/fortuneKing?hash=32d7d2807ed4e666ef03b4b3fe8c38
 require('../../pages/fangCity/fangCity?hash=32d7d2807ed4e666ef03b4b3fe8c38ecf2e34e68');
 require('../../pages/myChange/myChange?hash=32d7d2807ed4e666ef03b4b3fe8c38ecf2e34e68');
 require('../../pages/overBrand/overBrand?hash=32d7d2807ed4e666ef03b4b3fe8c38ecf2e34e68');
+require('../../pages/test/test/test?hash=32d7d2807ed4e666ef03b4b3fe8c38ecf2e34e68');
 require('../../pages/webview/webview?hash=32d7d2807ed4e666ef03b4b3fe8c38ecf2e34e68');
 }
 self.bootstrapApp ? self.bootstrapApp({ success }) : success();

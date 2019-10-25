@@ -5,10 +5,11 @@
     "pages/fangCity/fangCity",
     "pages/myChange/myChange",
     "pages/overBrand/overBrand",
+    "pages/test/test/test",
     "pages/webview/webview"
   ],
   "window": {
     "defaultTitle": "滴一滴",
-    "allowsBounceVertical":"NO"
+    "allowsBounceVertical": "NO"
   }
 }

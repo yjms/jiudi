@@ -248,10 +248,10 @@
     transform: translateX(-50%); 
 }
 .closeBtn{
-    width: 65rpx;
-    height: 65rpx;
+    width: 80rpx;
+    height: 80rpx;
     border-radius: 50%;
-    /* background-color: red; */
+    background-color: red;
     position: absolute;
     right:32rpx;
     top: 38rpx;
@@ -442,8 +442,8 @@
     margin-top: 50rpx;
 }
 .closebtn{
-   width: 40rpx;
-   height: 40rpx;
+   width: 80rpx;
+   height: 80rpx;
    /* background-color: red; */
    position: absolute;
    top: 30rpx;
@@ -462,4 +462,19 @@
 .setstyle{
   color: #666;
 }
-
+.setopt{
+  opacity: 0;
+  width: 1rpx;
+  height: 0rpx !important;
+}
+.jdNum2{
+  position: absolute;
+  left: 334rpx;
+  top: 356rpx !important;
+  font-size:34rpx;
+  font-weight:900;
+  color:rgb(225, 95, 28);
+  display: block;
+  width: 80rpx;
+  text-align: center;
+  }

@@ -1,4 +1,7 @@
+
 <view class="whole">
+    <image mode="widthFix" src="{{baseUrl}}/cardPop.png" class="setopt"/>
+     <image mode="widthFix" src="{{baseUrl}}/qiandao.png" class="setopt"/>
     <view a:if="{{!biglength}}" class="setstyle">-暂无数据-</view>
     <scroll-view scroll-y="{{true}}" class="liftBox" a:if="{{biglength}}">
         <view class="jdnum">已酿造 {{wineCount}} 滴</view>
@@ -86,6 +89,7 @@
         </view>
     </view>
     <!-- 其他奖品弹窗 -->
+    
     <view class="mouthPop" hidden="{{otherWorld}}">
         <view class="cardBox cardBox2" style="background-image:url({{baseUrl}}/cardPop.png)">
             <view>{{otherText}}</view>
@@ -95,8 +99,9 @@
     </view>
     <!-- 酒滴数不够时的弹窗 -->
    <view class="mouthPop" hidden="{{jdbugou}}">
-        <view class="cardBox setflex" style="background-image:url({{baseUrl}}/qiandao.png)">
-           <image mode="widthFix" src="{{baseUrl}}/bugou.png" class="bugou"/>
+        <view class="cardBox setflex" style="background-image:url({{baseUrl}}/jdlow.png)">
+           <!-- <image mode="widthFix" src="{{baseUrl}}/bugou.png" class="bugou"/> -->
+           <text class="jdNum2">{{xhnum}}</text>
            <view class="closebtn" onTap="closePop"></view>
         </view>
    </view> 

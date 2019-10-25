@@ -1,3 +1,10 @@
+  .addHeight{
+    width: 100vw;
+    height: 128vh;
+    background-color: white;
+    position: relative;
+    overflow-x: hidden;
+  }
 .whole{
     width: 100vw;
     height: 100vh;
@@ -5,7 +12,13 @@
     background-size:cover;
     display: flex;
     align-items: center;
+    position:absolute;
+    left: 0;
+    top: 0;
+    overflow-x: hidden;
+    transform: translate(0);
 }
+
 .funArea{
     width: 100%;
     height: 1116rpx;
@@ -362,8 +375,8 @@
   position:absolute;
   font-weight: 900;
   font-size: 25rpx;
-  bottom: 94rpx;
-  left: 60%;
+  bottom: 67rpx;
+  left: 60.8%;
   /* transform: translateX(-50%); */
   color: #EC3622;
   /* width: 100%; */
@@ -376,10 +389,10 @@
   font-size: 40rpx;
   font-weight: 900;
   display: block;
-  width: 70rpx;
+  width: 82rpx;
   position: absolute;
   left: 59.5%;
-  top: 288rpx;
+  top: 348rpx;
   color: #E15F1C;
   text-align: center;
 }
@@ -391,6 +404,33 @@
   color: 19rpx;
   font-family: 'font1';
   font-size: 20rpx;
+}
+.setopt{
+  opacity: 0;
+}
+.addImg{
+  width: 100%;
+  position: absolute;
+  top: 98vh;
+  left: 0;
+}
+.footimg1{
+  width: 100%;
+  height: auto;
+}
+.footimg2{
+  display: block;
+  width: 60%;
+  height: auto;
+  margin: 0 auto;
+  margin-top: 20rpx;
+}
+.footimg3{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:45%; 
+  z-index: 9;
 }
 @keyframes traLeft{
     0%{

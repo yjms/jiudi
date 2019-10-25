@@ -49,7 +49,7 @@ Page({
           couponMoney:e.currentTarget.dataset.couponMoney,
           otherText:e.currentTarget.dataset.other
       })
-      if(this.data.wineCount0<this.data.xhnum){
+      if(this.data.wineCount<this.data.xhnum){
           this.setData({xhJD:true,jdbugou:false})
           return;
       }
@@ -70,6 +70,7 @@ Page({
         //  console.log(res);
         if(res.data.code == '0000'){
                this.getshopList();
+               this.getWinedrops();
            if(this.data.type==2){
                   this.setData({
                       redeemCode:res.data.result.redeemCode,
@@ -94,9 +95,9 @@ Page({
                  this.setData({otherWorld:false,xhJD:true});
             }
             }else{
-                  my.showToast({
-                    content:res.data.message
-                  })
+                  // my.showToast({
+                  //   content:res.data.message
+                  // })
                   if(res.data.message=='对不起，您的酒滴数量不够，请兑换其它奖品'){
                       this.setData({xhJD:true,jdbugou:false})
                     }
@@ -167,6 +168,7 @@ Page({
             my.showToast({content:'恭喜您兑换成功!'});
             this.closePop();
             this.getshopList();
+            this.getWinedrops();
         }
         if(res.data.message=='对不起，您的酒滴数量不够，请兑换其它奖品'){
           this.setData({levShow:true,xhJD:true,jdbugou:false})

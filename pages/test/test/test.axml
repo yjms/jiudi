@@ -1,0 +1,5 @@
+<view class="whole">
+  New Page
+  <text class="aaa">text</text>
+  <view class="bbb"></view>
+</view>

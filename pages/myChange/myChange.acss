@@ -182,3 +182,6 @@
   height: 80rpx;
   overflow-y: scroll;
 }
+.setopt{
+  opacity: 0;
+}
